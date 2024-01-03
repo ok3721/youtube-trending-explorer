@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>YouTube Trending</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.css">
+
+    <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/sticky-header/bootstrap-table-sticky-header.css" rel="stylesheet">
+
+    <style>
+        .table-container {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            margin-right: 20px;
+        }
+    </style>
+
+  </head>
+  <body>
+    <h1 style="position: relative; top: 10px; left: 20px; margin-bottom: 15px;">YouTube Trending</h1>
+
+    <form style="position: relative; top: 5px; left: 20px;" action="/" method="post">
+        <select name="region">
+            {% for option_value, option_text in options1 %}
+            <option value="{{ option_value }}" {% if selected_option1 == option_value %}selected{% endif %}>{{ option_text }}</option>
+            {% endfor %}
+        </select>
+        <select name="category">
+            {% for option_value, option_text in options2 %}
+                <option value="{{ option_value }}" {% if selected_option2 == option_value %}selected{% endif %}>{{ option_text }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+    <div class="table-container">
+    <table
+    data-toggle="table"
+    data-url="{{ attribute_value }}"
+    data-pagination="true"
+    data-sticky-header="true"
+    
+    data-show-export="true"
+    data-export-data-type="all"
+    >
+    <thead>
+      <tr>
+        <th data-sortable="true" data-field="rank">Rank</th>
+        <th data-field="thumb_html" data-force-hide="true">Thumbnail</th>
+        <th data-field="title">Title</th>
+        <th data-field="channel">Channel</th>
+        <th data-field="view" data-sortable="true" >Views</th>
+        <th data-field="like" data-sortable="true" >Likes</th>
+        <th data-field="comment" data-sortable="true" >Comments</th>
+      </tr>
+    </thead>
+  </table>
+</div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/sticky-header/bootstrap-table-sticky-header.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.10.21/tableExport.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.10.21/libs/jsPDF/jspdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.10.21/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
+  </body>
+</html>

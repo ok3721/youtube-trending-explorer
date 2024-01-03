@@ -1,0 +1,3 @@
+google-api-python-client==2.109.0
+Flask==2.3.2
+gunicorn
