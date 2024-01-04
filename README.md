@@ -6,7 +6,7 @@ A simple Flask app to view trending YouTube video in various countries.
 ![sample](static/sample.jpg)
 
 ## Features
-- Filter trending video by region and category.
+- Filter trending video by region and category
 - Export result to csv/xlsx/json/etc..
 - Basic API to call
 
